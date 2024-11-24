@@ -10,6 +10,7 @@ services:
       - red-integrador
 
   frontend:
+    image: luisqtic/frontend:latest
     build:
       context: ./TP5-DiazMarcos-Frontend
       dockerfile: Dockerfile
@@ -22,6 +23,7 @@ services:
       - BACKEND_URL=http://localhost:4000 # Backend URL interno en la red
     networks:
       - red-integrador
+    restart: always
 
   backend:
     build:
